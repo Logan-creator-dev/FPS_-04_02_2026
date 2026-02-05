@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _cameraTransform: {fileID: 8195263728227811135}
   _moveSpeed: 15
-  _rotateSpeed: 180
+  _rotateSpeed: 177.3
   _xMinAngle: -60
   _xMaxAngle: 60
 --- !u!114 &4896829877887383110
