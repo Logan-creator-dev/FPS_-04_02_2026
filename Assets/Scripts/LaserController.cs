@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip _audioClip;
     [SerializeField] private Transform _originTransform;
+
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -12,6 +19,9 @@ public class LaserController : MonoBehaviour
         
         if (Input.GetButtonDown("Fire2"))
         {
+            
+            _audioSource.PlayOneShot(_audioClip);
+            
             Ray ray = new Ray(_originTransform.position, _originTransform.forward);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
