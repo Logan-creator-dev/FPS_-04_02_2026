@@ -1,21 +1,19 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class LauncherController : MonoBehaviour
 {
-    [SerializeField] private float _ammoPower; 
-    
+    [SerializeField] private float _ammoPower;
     [SerializeField] private GameObject _ammoPrefab;
     [SerializeField] private Transform _spawnPoint;
+    
 
-    private void Update()
+    private void OnFire(InputValue value)
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            GameObject instantiate = Instantiate(_ammoPrefab, _spawnPoint.position, Quaternion.identity);
-            Rigidbody rb = instantiate.GetComponent<Rigidbody>();
-            rb.AddForce(_spawnPoint.forward * _ammoPower);
-        }
+        GameObject instantiate = Instantiate(_ammoPrefab, _spawnPoint.position, Quaternion.identity);
+        Rigidbody rb = instantiate.GetComponent<Rigidbody>();
+        rb.AddForce(_spawnPoint.forward * _ammoPower);
     }
 }
