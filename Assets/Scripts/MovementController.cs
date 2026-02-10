@@ -70,7 +70,7 @@ public class MovementController : MonoBehaviour
         // cameraRotation = _cameraTransform.rotation.eulerAngles + cameraRotation;
         // cameraRotation.x = ClampAngle(cameraRotation.x, _xMinAngle, _xMaxAngle);
         
-        // Apply camera rotation
+        //Apply camera rotation
         // _cameraTransform.eulerAngles = cameraRotation;
     }
 
